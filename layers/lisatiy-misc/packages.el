@@ -74,7 +74,7 @@
 
 (defun lisatiy-misc/post-init-expand-region ()
   (with-eval-after-load 'expand-region
-    (when (configuration-layer/package-used-p 'helm-ag)
+    (when (configuration-layer/package-usedp 'helm-ag)
       (defadvice er/prepare-for-more-expansions-internal
           (around helm-ag/prepare-for-more-expansions-internal activate)
         ad-do-it
@@ -1210,7 +1210,7 @@ Search for a search tool in the order provided by `dotspacemacs-search-tools'."
 
         ;; .projectile file will specify the search root
         ;; add / to search when use expand region
-        ;; (when (configuration-layer/package-used-p 'counsel)
+        ;; (when (configuration-layer/package-usedp 'counsel)
         ;;   (defadvice er/prepare-for-more-expansions-internal
         ;;       (around ivy-rg/prepare-for-more-expansions-internal activate)
         ;;     ad-do-it
