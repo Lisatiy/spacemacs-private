@@ -11,13 +11,13 @@
 
 (defconst lisatiy-ui-packages
   '(
-    (zilong-mode-line :location built-in)
+    (lisatiy-mode-line :location built-in)
     diminish
     popwin
     (whitespace :location built-in)
     ;; hl-anything performance is very slow...
     ;; hl-anything
-    ;; if you wnat to use spaceline, please comment out zilong-mode-line
+    ;; if you wnat to use spaceline, please comment out lisatiy-mode-line
     ;; spaceline
     ;; beacon
     ;; evil-vimish-fold
@@ -27,7 +27,7 @@
 
 
 
-(defun lisatiy-ui/init-zilong-mode-line ()
+(defun lisatiy-ui/init-lisatiy-mode-line ()
   (defun lisatiy/display-mode-indent-width ()
     (let ((mode-indent-level
            (catch 'break
@@ -76,10 +76,10 @@
   (setq-default mode-line-format
                 (list
                  " %1"
-                 '(:eval (zilongshanren/modeline-winum-mode))
+                 '(:eval (lisatiy/modeline-winum-mode))
                  " "
-                 '(:eval (zilong/modeline--evil-substitute))
-                 '(:eval (zilongshanren/update-persp-name))
+                 '(:eval (lisatiy/modeline--evil-substitute))
+                 '(:eval (lisatiy/update-persp-name))
 
                  "%1 "
                  ;; the buffer name; the file name as a tool tip
@@ -144,7 +144,7 @@
 
                  (mode-line-fill 'mode-line 25)
 
-                 '(:eval (zilongshanren/display-mode-indent-width))
+                 '(:eval (lisatiy/display-mode-indent-width))
                  ;; line and column
                  " (" ;; '%02' to set to 2 chars at least; prevents flickering
                  (propertize "%02l" 'face 'font-lock-type-face) ","
@@ -198,7 +198,7 @@
                                 :global-override org-mode-line-string)
 
       (spaceline-compile
-       'zilong
+       'lisatiy
        ;; Left side of the mode line (all the important stuff)
        '(((persp-name
            workspace-number
@@ -223,7 +223,7 @@
        '((version-control :when active)
          battery))
 
-      (setq-default mode-line-format '("%e" (:eval (spaceline-ml-zilong))))
+      (setq-default mode-line-format '("%e" (:eval (spaceline-ml-lisatiy))))
       )))
 
 (defun lisatiy-ui/init-company-box ()
