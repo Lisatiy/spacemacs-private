@@ -11,13 +11,13 @@
 
 (defconst lisatiy-ui-packages
   '(
-    (lisatiy-mode-line :location built-in)
+    (zilong-mode-line :location built-in)
     diminish
     popwin
     (whitespace :location built-in)
     ;; hl-anything performance is very slow...
     ;; hl-anything
-    ;; if you wnat to use spaceline, please comment out lisatiy-mode-line
+    ;; if you wnat to use spaceline, please comment out zilong-mode-line
     ;; spaceline
     ;; beacon
     ;; evil-vimish-fold
@@ -27,7 +27,7 @@
 
 
 
-(defun lisatiy-ui/init-lisatiy-mode-line ()
+(defun lisatiy-ui/init-zilong-mode-line ()
   (defun lisatiy/display-mode-indent-width ()
     (let ((mode-indent-level
            (catch 'break
@@ -76,10 +76,10 @@
   (setq-default mode-line-format
                 (list
                  " %1"
-                 '(:eval (lisatiy/modeline-winum-mode))
+                 '(:eval (zilongshanren/modeline-winum-mode))
                  " "
-                 '(:eval (lisatiy/modeline--evil-substitute))
-                 '(:eval (lisatiy/update-persp-name))
+                 '(:eval (zilong/modeline--evil-substitute))
+                 '(:eval (zilongshanren/update-persp-name))
 
                  "%1 "
                  ;; the buffer name; the file name as a tool tip
@@ -144,7 +144,7 @@
 
                  (mode-line-fill 'mode-line 25)
 
-                 '(:eval (lisatiy/display-mode-indent-width))
+                 '(:eval (zilongshanren/display-mode-indent-width))
                  ;; line and column
                  " (" ;; '%02' to set to 2 chars at least; prevents flickering
                  (propertize "%02l" 'face 'font-lock-type-face) ","
@@ -188,18 +188,17 @@
         "The function called by the `org-clock' segment to determine what to show.")
 
       (spaceline-define-segment org-clock
-                                "Show information about the current org clock task.  Configure
-`spaceline-org-clock-format-function' to configure. Requires a currently running
-org clock.
-
-This segment overrides the modeline functionality of `org-mode-line-string'."
+                                "Show information about the current org clock task."
+                                "Configure `spaceline-org-clock-format-function' to configure."
+                                "Requires a currently running org clock."
+                                "This segment overrides the modeline functionality of `org-mode-line-string'."
                                 (when (and (fboundp 'org-clocking-p)
                                            (org-clocking-p))
                                   (substring-no-properties (funcall spaceline-org-clock-format-function)))
                                 :global-override org-mode-line-string)
 
       (spaceline-compile
-       'lisatiy
+       'zilong
        ;; Left side of the mode line (all the important stuff)
        '(((persp-name
            workspace-number
@@ -224,7 +223,7 @@ This segment overrides the modeline functionality of `org-mode-line-string'."
        '((version-control :when active)
          battery))
 
-      (setq-default mode-line-format '("%e" (:eval (spaceline-ml-lisatiy))))
+      (setq-default mode-line-format '("%e" (:eval (spaceline-ml-zilong))))
       )))
 
 (defun lisatiy-ui/init-company-box ()

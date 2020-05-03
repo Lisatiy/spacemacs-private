@@ -34,7 +34,7 @@ This function should only modify configuration layer settings."
      (ivy :variables ivy-enable-advanced-buffer-information nil)
      better-defaults
      ranger
-     emoji
+     emoji 
      (plantuml :variables plantuml-jar-path "~/.spacemacs.d/plantuml.jar")
      ;; lsp
      ;; dap
@@ -494,9 +494,9 @@ dump."
 
 (defun dotspacemacs/user-init ()
   (setq configuration-layer--elpa-archives
-    '(("melpa-cn" . "http://mirrors.tuna.tsinghua.edu.cn/elpa/melpa/")
-      ("org-cn"   . "http://mirrors.tuna.tsinghua.edu.cn/elpa/org/")
-      ("gnu-cn"   . "http://mirrors.tuna.tsinghua.edu.cn/elpa/gnu/")))
+        '(("melpa-cn" . "http://mirrors.tuna.tsinghua.edu.cn/elpa/melpa/")
+          ("org-cn"   . "http://mirrors.tuna.tsinghua.edu.cn/elpa/org/")
+          ("gnu-cn"   . "http://mirrors.tuna.tsinghua.edu.cn/elpa/gnu/")))
   
   (setq term-char-mode-point-at-process-mark nil)
 
@@ -544,7 +544,7 @@ dump."
   (setq split-width-threshold 120)
   ;; (linum-relative-on)
 
-  (spacemacs|add-company-backends :modes text-mode)
+  ;; (spacemacs|add-company-backends :modes text-mode)
 
   (add-hook 'doc-view-mode-hook 'auto-revert-mode)
 
@@ -648,7 +648,7 @@ dump."
                           'gbk))
   ;; (add-hook 'text-mode-hook 'spacemacs/toggle-spelling-checking-on)
 
-  (add-hook 'org-mode-hook 'emojify-mode)
+  ;; (add-hook 'org-mode-hook 'emojify-mode)
   (add-hook 'org-mode-hook 'auto-fill-mode)
 
   ;; https://emacs-china.org/t/ox-hugo-auto-fill-mode-markdown/9547/4
