@@ -279,4 +279,5 @@ with options to run in the shell.")
 (advice-add 'helm-ag--edit :before #'lisatiy-ag-edit)
 ;; (advice-add 'helm-ag--edit :after #'lisatiy-after-ag-edit)
 
-(setq counsel-git-cmd "git ls-files -z --full-name -- ':!:*.js.meta' ':!:*.meta'")
+;; (setq counsel-git-cmd "git ls-files -z --full-name -- ':!:*.js.meta' ':!:*.meta'")
+(setq counsel-git-cmd "git ls-files -z --full-name -- . ':!:*.js.meta' ':!:*.meta'")
