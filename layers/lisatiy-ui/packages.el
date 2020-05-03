@@ -2,7 +2,7 @@
 ;;
 ;; Copyright (c) 2014-2016 lisatiy
 ;;
-;; Author: guanghui <guanghui8827@gmail.com>
+;; Author: shufei <lsfshufei@gmail.com>
 ;; URL: https://github.com/lisatiy/spacemacs-private
 ;;
 ;; This file is not part of GNU Emacs.

@@ -2,7 +2,7 @@
 ;;
 ;; Copyright (c) 2014-2016 lisatiy
 ;;
-;; Author: lisatiy <guanghui8827@gmail.com>
+;; Author: lisatiy <lsfshufei@gmail.com>
 ;; URL: https://github.com/lisatiy/spacemacs-private
 ;;
 ;; This file is not part of GNU Emacs.
@@ -201,7 +201,7 @@
   (setq python-shell-interpreter "python"))
 
 (defun lisatiy-programming/post-init-js-doc ()
-  (setq js-doc-mail-address "guanghui8827@gmail.com"
+  (setq js-doc-mail-address "lsfshufei@gmail.com"
         js-doc-author (format "Guanghui Qu <%s>" js-doc-mail-address)
         js-doc-url "http://www.lisatiy.com"
         js-doc-license "MIT")
@@ -637,4 +637,4 @@
            ("/usr/include/" "/usr/local/include/" "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include/c++/v1")))
     (setq company-c-headers-path-user
           (quote
-           ("/Users/guanghui/cocos2d-x/cocos/platform" "/Users/guanghui/cocos2d-x/cocos" "." "/Users/guanghui/cocos2d-x/cocos/audio/include/")))))
+           ("/Users/shufei/cocos2d-x/cocos/platform" "/Users/shufei/cocos2d-x/cocos" "." "/Users/shufei/cocos2d-x/cocos/audio/include/")))))

@@ -3,7 +3,7 @@
 ;;
 ;; Copyright (c) 2014-2016 lisatiy
 ;;
-;; Author: lisatiy <guanghui8827@gmail.com>
+;; Author: lisatiy <lsfshufei@gmail.com>
 ;; URL: https://github.com/lisatiy/spacemacs-private
 ;;
 ;; This file is not part of GNU Emacs.

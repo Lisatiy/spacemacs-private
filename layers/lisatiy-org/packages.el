@@ -2,7 +2,7 @@
 ;;
 ;; Copyright (c) 2014-2016 lisatiy
 ;;
-;; Author: guanghui <guanghui8827@gmail.com>
+;; Author: shufei <lsfshufei@gmail.com>
 ;; URL: https://github.com/lisatiy/spacemacs-private
 ;;
 ;; This file is not part of GNU Emacs.
@@ -428,7 +428,7 @@ See `org-capture-templates' for more information."
                :section-numbers nil
                :html-preamble ,lisatiy-website-html-preamble
                :author "lisatiy"
-               :email "guanghui8827@gmail.com"
+               :email "lsfshufei@gmail.com"
                :auto-sitemap t          ; Generate sitemap.org automagically...
                :sitemap-filename "index.org" ; ... call it sitemap.org (it's the default)...
                :sitemap-title "我的wiki"     ; ... with title 'Sitemap'.
@@ -544,7 +544,7 @@ holding contextual information."
     :defer t))
 
 (defun lisatiy-org/post-init-ox-reveal ()
-  (setq org-reveal-root "file:///Users/guanghui/.emacs.d/reveal-js"))
+  (setq org-reveal-root "file:///Users/shufei/.emacs.d/reveal-js"))
 
 
 (defun lisatiy-org/init-org-tree-slide ()

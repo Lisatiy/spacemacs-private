@@ -2,7 +2,7 @@
 ;;
 ;; Copyright (c) 2015-2016 lisatiy 
 ;;
-;; Author: lisatiy <guanghui8827@gmail.com>
+;; Author: lisatiy <lsfshufei@gmail.com>
 ;; URL: https://github.com/lisatiy/spacemacs-private
 ;;
 ;; This file is not part of GNU Emacs.
@@ -234,7 +234,7 @@ comment box."
 
 (defun my-setup-develop-environment ()
   (interactive)
-  (when (my-project-name-contains-substring "guanghui")
+  (when (my-project-name-contains-substring "shufei")
     (cond
      ((my-project-name-contains-substring "cocos2d-x")
       ;; C++ project don't need html tags

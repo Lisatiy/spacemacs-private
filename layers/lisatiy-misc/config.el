@@ -2,7 +2,7 @@
 ;;
 ;; Copyright (c) 2014-2016 lisatiy
 ;;
-;; Author: lisatiy <guanghui8827@gmail.com>
+;; Author: lisatiy <lsfshufei@gmail.com>
 ;; URL: https://github.com/lisatiy/spacemacs-private
 ;;
 ;; This file is not part of GNU Emacs.
@@ -22,7 +22,7 @@
                                             ("8zh" "@~chinese")
                                             ("8sp" "spacemacs")
                                             ;; email
-                                            ("8me" "guanghui8827@gmail.com")
+                                            ("8me" "lsfshufei@gmail.com")
 
                                             ;; computing tech
                                             ("8wp" "Wikipedia")
@@ -42,4 +42,4 @@
                                             ("8str" "\\([^\"]+?\\)\"")))
 
 
-(setq user-mail-address "guanghui8827@gmail.com")
+(setq user-mail-address "lsfshufei@gmail.com")

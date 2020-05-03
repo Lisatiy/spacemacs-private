@@ -54,7 +54,7 @@
            (indent-buffer))
      (typescript-backend . lsp)
      (javascript-backend . lsp)
-     (eval setenv "PYTHONPATH" "/Users/guanghui/cocos2d-x/tools/cocos2d-console/plugins:/Users/guanghui/cocos2d-x/tools/cocos2d-console/bin")))
+     (eval setenv "PYTHONPATH" "/Users/shufei/cocos2d-x/tools/cocos2d-console/plugins:/Users/shufei/cocos2d-x/tools/cocos2d-console/bin")))
  '(sp-show-pair-from-inside t)
  '(tags-revert-without-query t)
  '(vc-follow-symlinks t)
