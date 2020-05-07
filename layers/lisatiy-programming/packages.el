@@ -202,7 +202,7 @@
 
 (defun lisatiy-programming/post-init-js-doc ()
   (setq js-doc-mail-address "lsfshufei@gmail.com"
-        js-doc-author (format "Guanghui Qu <%s>" js-doc-mail-address)
+        js-doc-author (format "lisatiy Qu <%s>" js-doc-mail-address)
         js-doc-url "http://www.lisatiy.com"
         js-doc-license "MIT")
 
