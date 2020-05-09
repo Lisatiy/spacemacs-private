@@ -493,10 +493,10 @@ dump."
   )
 
 (defun dotspacemacs/user-init ()
-  (setq configuration-layer--elpa-archives
-        '(("melpa-cn" . "http://mirrors.tuna.tsinghua.edu.cn/elpa/melpa/")
-          ("org-cn"   . "http://mirrors.tuna.tsinghua.edu.cn/elpa/org/")
-          ("gnu-cn"   . "http://mirrors.tuna.tsinghua.edu.cn/elpa/gnu/")))
+  (setq-default configuration-layer-elpa-archives
+                '(("melpa-cn" . "http://elpa.emacs-china.org/melpa/")
+                  ("org-cn"   . "http://elpa.emacs-china.org/org/")
+                  ("gnu-cn"   . "http://elpa.emacs-china.org/gnu/")))
   
   (setq term-char-mode-point-at-process-mark nil)
 
@@ -544,7 +544,7 @@ dump."
   (setq split-width-threshold 120)
   ;; (linum-relative-on)
 
-  ;; (spacemacs|add-company-backends :modes text-mode)
+  (spacemacs|add-company-backends :modes text-mode)
 
   (add-hook 'doc-view-mode-hook 'auto-revert-mode)
 
@@ -648,7 +648,7 @@ dump."
                           'gbk))
   ;; (add-hook 'text-mode-hook 'spacemacs/toggle-spelling-checking-on)
 
-  ;; (add-hook 'org-mode-hook 'emojify-mode)
+  (add-hook 'org-mode-hook 'emojify-mode)
   (add-hook 'org-mode-hook 'auto-fill-mode)
 
   ;; https://emacs-china.org/t/ox-hugo-auto-fill-mode-markdown/9547/4
