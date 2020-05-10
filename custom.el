@@ -81,6 +81,7 @@
  '(mc/cursor-bar-face ((t (:background "chartreuse3"))))
  '(show-paren-match ((t (:background "dark gray" :foreground "#d33682" :weight bold))))
  '(sp-show-pair-match-face ((t (:background "#272822" :foreground "gray" :inverse-video t :weight normal))))
- '(web-mode-current-element-highlight-face ((t (:background "dark gray")))))
+ '(web-mode-current-element-highlight-face ((t (:background "dark gray"))))
+ '(winum-face ((t nil)) t))
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.

@@ -76,7 +76,8 @@
   (setq-default mode-line-format
                 (list
                  " %1"
-                 '(:eval (lisatiy/modeline-winum-mode))
+                 ;; '(:eval (lisatiy/modeline-winum-mode))
+                 '(:eval (winum-get-number-string))
                  " "
                  '(:eval (lisatiy/modeline--evil-substitute))
                  '(:eval (lisatiy/update-persp-name))
