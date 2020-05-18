@@ -39,7 +39,7 @@
  '(org-deadline-warning-days 14)
  '(org-fast-tag-selection-single-key (quote expert))
  '(org-log-into-drawer t)
- '(org-pomodoro-length 40)
+ '(org-pomodoro-length 30)
  '(org-pomodoro-play-sounds nil)
  '(org-reverse-note-order t)
  '(package-selected-packages
