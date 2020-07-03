@@ -563,6 +563,10 @@ dump."
   (add-to-list 'auto-mode-alist
                '("Capstanfile\\'" . yaml-mode))
 
+  ;; company-english-helper
+  (add-to-list 'load-path (expand-file-name "~/.emacs.d/layers/company-english-helper"))
+  (require 'company-english-helper)
+
   (defun js-indent-line ()
     "Indent the current line as JavaScript."
     (interactive)
