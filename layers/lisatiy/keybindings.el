@@ -35,6 +35,8 @@
 (global-set-key (kbd "C-M-\\") 'indent-region-or-buffer)
 (global-set-key [remap fill-paragraph] #'endless/fill-or-unfill)
 
+(global-set-key (kbd "C-c h e") 'toggle-company-english-helper)
+
 ;; (global-set-key (kbd "C-.") 'company-capf)
 
 ;; some easy functions for navigate functions

@@ -36,7 +36,6 @@ This function should only modify configuration layer settings."
      ranger
      emoji 
      (plantuml :variables plantuml-jar-path "~/.spacemacs.d/plantuml.jar")
-     ;; lsp
      ;; dap
      colors
      prodigy
@@ -78,11 +77,14 @@ This function should only modify configuration layer settings."
      gpu
      yaml
      react
+     (lsp :variables
+          lsp-python-ms-executable "~/Github/python-language-server/output/bin/Release/Microsoft.Python.LanguageServer.exe")
      (python :variables
              python-test-runner '(nose pytest)
              python-backend 'lsp
              python-lsp-server 'mspyls
-             python-lsp-git-root "~/Github/python-language-server")
+             ;; python-lsp-git-root "~/Github/python-language-server"
+             )
      ;; (ruby :variables ruby-version-manager 'chruby)
      ;; ruby-on-rails
      lua
@@ -90,8 +92,8 @@ This function should only modify configuration layer settings."
      (javascript :variables javascript-backend 'lsp)
      (typescript :variables
                  typescript-fmt-on-save nil
-                 typescript-fmt-tool 'typescript-formatter
-                typescript-backend 'lsp)
+                 ;; typescript-fmt-tool 'typescript-formatter
+                 typescript-backend 'lsp)
      emacs-lisp
      (clojure :variables clojure-enable-fancify-symbols t)
      racket
@@ -564,7 +566,7 @@ dump."
                '("Capstanfile\\'" . yaml-mode))
 
   ;; company-english-helper
-  (add-to-list 'load-path (expand-file-name "~/.emacs.d/layers/company-english-helper"))
+  (add-to-list 'load-path (expand-file-name "~/Github/company-english-helper"))
   (require 'company-english-helper)
 
   (defun js-indent-line ()

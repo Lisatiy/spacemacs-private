@@ -960,12 +960,14 @@ Search for a search tool in the order provided by `dotspacemacs-search-tools'."
     (spacemacs|define-custom-layout "@work"
       :binding "w"
       :body
-      (find-file "~/Github/HlMJ_js/assets/scripts/Login/LoginScene.ts")))
+      ;; (find-file "~/Github/HlMJ_js/assets/scripts/Login/LoginScene.ts")
+      (find-file "e:/CodeChip/script_win/cableProcess/cablematch.py")))
   (when (fboundp 'spacemacs|define-custom-layout)
     (spacemacs|define-custom-layout "@blog"
       :binding "b"
       :body
-      (find-file "~/lisatiy.com/config.toml")))
+      ;; (find-file "~/lisatiy.com/config.toml")
+      (find-file "e:/GitBlog&GTD/lisatiy.github.io/_posts/2020-04-24-basic-grammar.md")))
   )
 
 (defun lisatiy-misc/post-init-pyim ()
