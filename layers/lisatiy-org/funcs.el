@@ -39,6 +39,33 @@
     (lisatiy//insert-org-or-md-img-link "./" (concat basename ".png")))
   (insert "\n"))
 
+(defun org-insert-clipboard (&optional captionp)
+  (interactive "P")
+  (let* ((image-dir
+	  (if (not (buffer-file-name))
+	      (cond ((string-prefix-p "CAPTURE-[0-9]" (buffer-name))
+		     (let ((buffer-name (replace-regexp-in-string "CAPTURE-[0-9-]*" "" (buffer-name))))
+		       (concat (file-name-directory (buffer-file-name (get-file-buffer buffer-name))) "images")))
+		    (t (yank) (error "")))
+	    "images"))
+	 (fname (concat (make-temp-name "image-") (format-time-string "%Y%m%d-%H%M%S")))
+	 (image-file (concat image-dir "/" fname ".png"))
+	 (exit-status
+	  (call-process "magick convert" nil nil nil
+			"clipboard:" image-file)))
+    (if (zerop exit-status)
+	(progn
+	  (unless (file-exists-p image-dir) (make-directory image-dir))
+	  (if captionp
+	      (let ((rename (read-string "Filename to rename the temp images: ")))
+		(rename-file image-file (concat image-dir "/" rename ".png") t)
+		(insert (format "#+CAPTION: %s label:fig:%s\n" (read-string "Caption: ") rename))
+		(kill-new (format "Fig. ref:fig:%s " rename)))
+	    (insert (format "[[file:%s]]" image-file))
+	    (org-display-inline-images)))
+      (when captionp (user-error "No images in clipboard."))
+      (yank))))
+
 (defun lisatiy/org-archive-done-tasks ()
   (interactive)
   (org-map-entries
