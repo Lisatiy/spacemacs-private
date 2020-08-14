@@ -9,8 +9,8 @@
 
 (if (spacemacs/system-is-mswindows)
     (setq
-     org-agenda-dir "e:/GitBlog&GTD/gtd/org-notes"
-     deft-dir "e:/GitBlog&GTD/gtd/org-notes"
+     org-agenda-dir "e:/GitBlog&GTD/gtd/todo-org"
+     deft-dir "e:/GitBlog&GTD/gtd/todo-org"
      blog-admin-dir "e:/GitBlog&GTD/lisatiy.github.io")
   (setq
    org-agenda-dir "~/org-notes"

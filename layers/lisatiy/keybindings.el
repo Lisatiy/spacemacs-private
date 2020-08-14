@@ -87,6 +87,7 @@
 (bind-key* "M-c" 'dakra-capitalize-dwim)
 ;; (bind-key* "C-l" 'recenter)
 
+(global-set-key (kbd "C-y") 'lisatiy/org-insert-clipboard)
 
 ;; Utility functions
 (defun bb/define-key (keymap &rest bindings)

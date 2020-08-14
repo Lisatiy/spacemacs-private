@@ -39,7 +39,7 @@
     (lisatiy//insert-org-or-md-img-link "./" (concat basename ".png")))
   (insert "\n"))
 
-(defun org-insert-clipboard (&optional captionp)
+(defun lisatiy/org-insert-clipboard (&optional captionp)
   (interactive "P")
   (let* ((image-dir
 	  (if (not (buffer-file-name))
@@ -48,10 +48,11 @@
 		       (concat (file-name-directory (buffer-file-name (get-file-buffer buffer-name))) "images")))
 		    (t (yank) (error "")))
 	    "images"))
-	 (fname (concat (make-temp-name "image-") (format-time-string "%Y%m%d-%H%M%S")))
+	 ;; (fname (concat (make-temp-name "image-") (format-time-string "%Y%m%d-%H%M%S")))
+     (fname (concat "image-" (format-time-string "%Y%m%d-%H%M%S")))
 	 (image-file (concat image-dir "/" fname ".png"))
 	 (exit-status
-	  (call-process "magick convert" nil nil nil
+	  (call-process "magick" nil nil nil
 			"clipboard:" image-file)))
     (if (zerop exit-status)
 	(progn
