@@ -326,8 +326,11 @@
       ;;http://www.howardism.org/Technical/Emacs/journaling-org.html
       ;;add multi-file journal
       (setq org-capture-templates
-            '(("t" "Todo" entry (file+headline org-agenda-file-gtd "Workspace")
-               "* TODO [#B] %?\n  %i\n %U"
+            '(("t" "Todo" entry (file+headline org-agenda-file-gtd "WorkSpace")
+               "* TODO [#A] %?\n  %i\n %U"
+               :empty-lines 1) 
+              ("s" "Study" entry (file+headline org-agenda-file-gtd "StudySpace")
+               "* TODO [#A] %?\n  %i\n %U"
                :empty-lines 1)
               ("n" "notes" entry (file+headline org-agenda-file-note "Quick notes")
                "* %?\n  %i\n %U"
@@ -335,22 +338,22 @@
               ("b" "Blog Ideas" entry (file+headline org-agenda-file-note "Blog Ideas")
                "* TODO [#B] %?\n  %i\n %U"
                :empty-lines 1)
-              ("s" "Code Snippet" entry
+              ("c" "Code Snippet" entry
                (file org-agenda-file-code-snippet)
                "* %?\t%^g\n#+BEGIN_SRC %^{language}\n\n#+END_SRC")
-              ("w" "work" entry (file+headline org-agenda-file-gtd "Work")
-               "* TODO [#A] %?\n  %i\n %U"
-               :empty-lines 1)
+              ;; ("w" "work" entry (file+headline org-agenda-file-gtd "Work")
+              ;;  "* TODO [#A] %?\n  %i\n %U"
+              ;;  :empty-lines 1)
               ("x" "Web Collections" entry
                (file+headline org-agenda-file-note "Web")
                "* %U %:annotation\n\n%:initial\n\n%?")
-              ("p" "Protocol" entry (file+headline org-agenda-file-note "Inbox")
-               "* %^{Title}\nSource: %u, %c\n #+BEGIN_QUOTE\n%i\n#+END_QUOTE\n\n\n%?")
-	          ("L" "Protocol Link" entry (file+headline org-agenda-file-note "Inbox")
-               "* %? [[%:link][%:description]] \nCaptured On: %U")
-              ("c" "Chrome" entry (file+headline org-agenda-file-note "Quick notes")
-               "* TODO [#C] %?\n %(lisatiy/retrieve-chrome-current-tab-url)\n %i\n %U"
-               :empty-lines 1)
+              ;; ("p" "Protocol" entry (file+headline org-agenda-file-note "Inbox")
+              ;;  "* %^{Title}\nSource: %u, %c\n #+BEGIN_QUOTE\n%i\n#+END_QUOTE\n\n\n%?")
+	          ;; ("L" "Protocol Link" entry (file+headline org-agenda-file-note "Inbox")
+              ;;  "* %? [[%:link][%:description]] \nCaptured On: %U")
+              ;; ("m" "Chrome" entry (file+headline org-agenda-file-note "Quick notes")
+              ;;  "* TODO [#C] %?\n %(lisatiy/retrieve-chrome-current-tab-url)\n %i\n %U"
+              ;;  :empty-lines 1)
               ("l" "links" entry (file+headline org-agenda-file-note "Quick notes")
                "* TODO [#C] %?\n  %i\n %a \n %U"
                :empty-lines 1)
@@ -374,15 +377,16 @@ See `org-capture-templates' for more information."
                          "\n\n")        ;Place the cursor here finally
                        "\n")))
 
-        (add-to-list 'org-capture-templates
-                     '("h"              ;`org-capture' binding + h
-                       "Hugo post"
-                       entry
-                       ;; It is assumed that below file is present in `org-directory'
-                       ;; and that it has a "Blog Ideas" heading. It can even be a
-                       ;; symlink pointing to the actual location of all-posts.org!
-                       (file+headline org-agenda-file-blogposts "Blog Ideas")
-                       (function org-hugo-new-subtree-post-capture-template))))
+        ;; (add-to-list 'org-capture-templates
+        ;;              '("h"              ;`org-capture' binding + h
+        ;;                "Hugo post"
+        ;;                entry
+        ;;                ;; It is assumed that below file is present in `org-directory'
+        ;;                ;; and that it has a "Blog Ideas" heading. It can even be a
+        ;;                ;; symlink pointing to the actual location of all-posts.org!
+        ;;                (file+headline org-agenda-file-blogposts "Blog Ideas")
+        ;;                (function org-hugo-new-subtree-post-capture-template)))
+        )
 
       ;;An entry without a cookie is treated just like priority ' B '.
       ;;So when create new task, they are default 重要且紧急
