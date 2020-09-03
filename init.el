@@ -112,7 +112,7 @@ This function should only modify configuration layer settings."
    ;; To use a local version of a package, use the `:location' property:
    ;; '(your-package :location "~/path/to/your-package/")
    ;; Also include the dependencies as they will not be resolved automatically.
-   dotspacemacs-additional-packages '(sicp ssh-agency anki-editor)
+   dotspacemacs-additional-packages '(sicp ssh-agency anki-editor cdlatex auctex)
 
    ;; A list of packages that cannot be updated.
    dotspacemacs-frozen-packages '()
@@ -495,10 +495,12 @@ dump."
   )
 
 (defun dotspacemacs/user-init ()
-  (setq-default configuration-layer-elpa-archives
-                '(("melpa-cn" . "http://elpa.emacs-china.org/melpa/")
-                  ("org-cn"   . "http://elpa.emacs-china.org/org/")
-                  ("gnu-cn"   . "http://elpa.emacs-china.org/gnu/")))
+  ;; (setq-default configuration-layer-elpa-archives
+  ;;               '(("melpa-cn" . "http://elpa.emacs-china.org/melpa/")
+  ;;                 ("org-cn"   . "http://elpa.emacs-china.org/org/")
+  ;;                 ("gnu-cn"   . "http://elpa.emacs-china.org/gnu/")))
+  (add-to-list 'package-archives
+               '("melpa-stable" . "https://stable.melpa.org/packages/") t)
   
   (setq term-char-mode-point-at-process-mark nil)
 
@@ -529,6 +531,8 @@ dump."
   ;; enable org-protocol
   (server-start)
   (require 'org-protocol)
+
+  (plist-put org-format-latex-options :scale 2)
 
   ;; Setting Chinese Font
   (when (and (spacemacs/system-is-mswindows) window-system)
