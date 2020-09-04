@@ -112,7 +112,7 @@ This function should only modify configuration layer settings."
    ;; To use a local version of a package, use the `:location' property:
    ;; '(your-package :location "~/path/to/your-package/")
    ;; Also include the dependencies as they will not be resolved automatically.
-   dotspacemacs-additional-packages '(sicp ssh-agency anki-editor cdlatex auctex)
+   dotspacemacs-additional-packages '(cdlatex auctex sicp ssh-agency anki-editor)
 
    ;; A list of packages that cannot be updated.
    dotspacemacs-frozen-packages '()
@@ -500,7 +500,7 @@ dump."
   ;;                 ("org-cn"   . "http://elpa.emacs-china.org/org/")
   ;;                 ("gnu-cn"   . "http://elpa.emacs-china.org/gnu/")))
   (add-to-list 'package-archives
-               '("melpa-stable" . "https://stable.melpa.org/packages/") t)
+               '("melpa-stable" . "https://melpa.org/packages/") t)
   
   (setq term-char-mode-point-at-process-mark nil)
 

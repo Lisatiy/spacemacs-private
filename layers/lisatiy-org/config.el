@@ -17,4 +17,5 @@
   (add-to-list 'ispell-skip-region-alist '("=" "="))
   (add-to-list 'ispell-skip-region-alist '("^#\\+BEGIN_SRC" . "^#\\+END_SRC")))
 
+(add-hook 'LaTeX-mode-hook 'turn-on-cdlatex)
 (add-hook 'org-mode-hook #'lisatiy/org-ispell)
