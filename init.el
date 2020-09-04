@@ -536,7 +536,9 @@ dump."
 
   ;; Setting Chinese Font
   (when (and (spacemacs/system-is-mswindows) window-system)
+    (add-to-list 'exec-path "c:/msys64/mingw64/bin/")
     (setq ispell-program-name "aspell")
+    (setq ispell-personal-dictionary "c:/msys64/mingw64/lib/aspell-0.60/en_GB")
     (setq w32-pass-alt-to-system nil)
     (setq w32-apps-modifier 'super)
     (dolist (charset '(kana han symbol cjk-misc bopomofo))
