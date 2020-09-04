@@ -112,7 +112,7 @@ This function should only modify configuration layer settings."
    ;; To use a local version of a package, use the `:location' property:
    ;; '(your-package :location "~/path/to/your-package/")
    ;; Also include the dependencies as they will not be resolved automatically.
-   dotspacemacs-additional-packages '(cdlatex auctex sicp ssh-agency anki-editor)
+   dotspacemacs-additional-packages '(cdlatex auctex company-reftex sicp ssh-agency anki-editor)
 
    ;; A list of packages that cannot be updated.
    dotspacemacs-frozen-packages '()
@@ -548,6 +548,20 @@ dump."
 
   (fset 'evil-visual-update-x-selection 'ignore)
 
+  (setq TeX-PDF-mode t)
+  (setq TeX-source-correlate-mode t)
+  (setq TeX-source-correlate-method 'synctex)
+  ;; spacemacs/system-is-mswindows
+  (setq TeX-view-program-list 
+        '(("Sumatra PDF" ("\"d:/InSoftware/SumatraPDF/SumatraPDF.exe\" -reuse-instance" (mode-io-correlate " -forward-search %b %n ") " %o"))))
+  (add-hook 'LaTeX-mode-hook
+            (lambda ()
+              (assq-delete-all 'output-pdf TeX-view-program-selection)
+              (add-to-list 'TeX-view-program-selection '(output-pdf "Sumatra PDF"))))
+
+
+  (fset 'evil-visual-update-x-selection 'ignore)
+  
   ;; force horizontal split window
   (setq split-width-threshold 120)
   ;; (linum-relative-on)
